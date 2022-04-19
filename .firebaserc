@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "help-ua-project": {
+      "hosting": {
+        "helper": [
+          "help-ua-project"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "help-ua-project"
+  }
+}

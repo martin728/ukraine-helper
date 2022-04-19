@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@1,300&family=Dancing+Script&family=Lato:wght@300&family=Noto+Serif:wght@700&family=Ubuntu:wght@300&display=swap');
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: aliceblue;
+}
+.request-img{
+  width: 100px;
+}
+.request-img-big{
+  width: 200px;
+}

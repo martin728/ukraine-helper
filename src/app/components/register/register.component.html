@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col"></div>
+    <div class="col-4 ">
+      <div class="card shadow">
+        <div class="card-body bg-dark">
+          <form>
+            <div class="mb-3">
+              <h4 class="text-light">Register</h4>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email </label>
+              <input type="email" class="form-control" placeholder="name@example.com"  name="email" [(ngModel)]="email">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Password..." name="password" [(ngModel)]="password">
+            </div>
+            <button type="button" class="btn btn-primary" (click)="register()">Register</button>
+            <div class="row">
+              <div class="col-md-6 mt-2">
+                <a class="text-light" routerLink="/login" style="text-decoration: none" >Have an account? <span class="fw-bold">Log in!</span></a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>

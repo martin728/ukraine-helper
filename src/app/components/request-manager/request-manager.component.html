@@ -1,0 +1,67 @@
+<div class="container mt-3 ">
+  <div class="row">
+    <div class="col">
+      <p class="h3 fw-bold">Requests
+        <a routerLink="/requests/add" class="btn btn-dark btn-sm"><i class="fa fa-plus-circle"></i> New</a>
+      </p>
+      <p class="fst-italic">
+        Here you can see a list of requests that can help you.
+      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Write...">
+            </div>
+            <div class="col">
+              <input type="submit" class="btn btn-outline-dark" value="Search">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-request></app-request>
+
+
+<!--cards-->
+<!--<div class="container mt-3">-->
+<!--  <div class="row">-->
+<!--    <div class="col-md-6">-->
+<!--      <div class="card list-group-item list-group-item-light shadow-lg">-->
+<!--        <div class="card-body">-->
+<!--          <div class="row ">-->
+<!--            <div class="col-md-4">-->
+<!--              <img src="https://icon-library.com/images/icon-avatar/icon-avatar-6.jpg" class="request-img" alt="avatar">-->
+<!--            </div>-->
+<!--            <div class="col-md-7">-->
+<!--              <h2 id="title"  name="title" [(ngModel)]="title"> Need help</h2>-->
+<!--              <p>"I am looking for a place to stay."</p>-->
+<!--              <div>-->
+<!--                <i class="fa-solid fa-location-dot"></i> Lviv,Ukraine.-->
+<!--                <i class="fa-solid fa-house-circle-exclamation"></i> Shelter-->
+<!--              </div>-->
+<!--              &lt;!&ndash;<ul>&ndash;&gt;-->
+<!--                  &lt;!&ndash;<li class="list-group-item m-1">Name: <span class="fw-bold">Name</span></li>&ndash;&gt;-->
+<!--                  &lt;!&ndash;<li class="list-group-item m-1">Email: <span class="fw-bold" >diana@mail.com</span></li>&ndash;&gt;-->
+<!--                  &lt;!&ndash;<li class="list-group-item m-1">Phone: <span class="fw-bold" >+380936158722</span></li>&ndash;&gt;-->
+<!--              &lt;!&ndash;</ul>&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="col-md-1 d-flex flex-column justify-content-center align-items-center">-->
+<!--              <a routerLink="/requests/view/:requestId" class="btn btn-warning my-1">-->
+<!--                <i class="fa fa-eye"></i>-->
+<!--              </a>-->
+<!--              <a routerLink="/requests/edit/:requestId" class="btn btn-primary my-1">-->
+<!--                <i class="fa fa-pen"></i>-->
+<!--              </a>-->
+<!--              <button class="btn btn-danger my-1">-->
+<!--                <i class="fa fa-trash-alt"></i>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
