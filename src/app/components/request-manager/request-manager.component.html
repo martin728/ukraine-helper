@@ -22,7 +22,12 @@
     </div>
   </div>
 </div>
-<app-request></app-request>
+
+<ng-template ngFor let-item [ngForOf]="requestsList">
+  <app-request [request]="item"></app-request>
+</ng-template>
+
+<!--<app-request ></app-request>-->
 
 
 <!--cards-->

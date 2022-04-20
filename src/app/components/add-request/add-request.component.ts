@@ -10,27 +10,39 @@ import {IRequest} from "../../models/IRequest";
 })
 export class AddRequestComponent implements OnInit {
   requestsList: IRequest[] = [];
-  requestsObj : IRequest ={
+  requestsObj : IRequest = {
     email: "",
-    mobile: "",
-    name: "",
-    title: ""
+    city: "",
+    request: "",
+    title: "",
+    selectedCategory: "",
+    country: ""
   };
   id:string= '';
-  name:string= '';
   email:string= '';
-  mobile:string= '';
+  city:string= '';
+  country:string= '';
+  request:string= '';
   title:string= '';
+  selectedCategory = '';
 
+  categories = [
+    { id: 1, name: 'Food' },
+    { id: 2, name: 'Clothes' },
+    { id: 3, name: 'Medicine' },
+    { id: 4, name: 'Shelter' },
+  ];
   constructor(private auth :AuthService, private data : DataService) { }
 
   ngOnInit(): void {
   }
   resetForm(){
     this.id = '';
-    this.name = '';
+    this.request = '';
     this.email = '';
-    this.mobile = '';
+    this.city = '';
+    this.selectedCategory = '';
+    this.country = '';
     this.title = '';
   }
   addRequest(){
@@ -40,8 +52,10 @@ export class AddRequestComponent implements OnInit {
     // }
     this.requestsObj.id = '';
     this.requestsObj.email = this.email;
-    this.requestsObj.name = this.name;
-    this.requestsObj.mobile = this.mobile;
+    this.requestsObj.request = this.request;
+    this.requestsObj.city = this.city;
+    this.requestsObj.selectedCategory = this.selectedCategory;
+    this.requestsObj.country = this.country;
     this.requestsObj.title = this.title;
 
     this.data.addRequest(this.requestsObj);
