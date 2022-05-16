@@ -12,32 +12,30 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <form>
+      <form [formGroup]="editRequestForm" (ngSubmit)="editRequest()">
         <div class="mb-2">
-          <input class="form-control" placeholder="Name" type="text">
+          <input class="form-control" type="text" id="title" formControlName="title"  ngModel="{{this.selectedRequest?.title}}">
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Photo Url" type="text">
+          <input class="form-control" type="text" formControlName="fullName" ngModel="{{this.selectedRequest?.fullName}}">
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Email" type="email">
+          <input class="form-control" type="text" formControlName="email"  ngModel="{{this.selectedRequest?.email}}">
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Phone" type="number">
+          <input class="form-control"  type="country" id="country" formControlName="country" ngModel="{{this.selectedRequest?.country}}">
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Company" type="text">
+          <input class="form-control"  type="text" id="city" formControlName="city" ngModel="{{this.selectedRequest?.city}}">
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Title" type="text">
+          <input class="form-control"  type="text" id="request" formControlName="request" ngModel="{{this.selectedRequest?.request}}">
         </div>
         <div class="mb-2">
-          <select class="form-control">
-            <option> Select a group</option>
-          </select>
+          <input class="form-control"  type="text" id="selectedCategory" formControlName="selectedCategory" ngModel="{{this.selectedRequest?.selectedCategory}}">
         </div>
         <div class="mb-2">
-          <input class="btn btn-danger" value="Update" type="submit">
+          <input class="btn btn-danger" value="Update" type="submit" (click)="updateForm()">
           <a routerLink="/" class="btn btn-dark ms-2">Close</a>
         </div>
       </form>

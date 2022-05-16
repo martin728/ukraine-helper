@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IRequest} from "../../models/IRequest";
-import {DataService} from "../../shared/data.service";
-import {AuthService} from "../../shared/auth.service";
+import {DataService} from "../../services/data.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-request',

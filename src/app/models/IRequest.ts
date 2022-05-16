@@ -1,7 +1,10 @@
 export interface IRequest{
   id? : string;
-  name :string;
+  fullName : string;
+  request :string;
   email :string;
   title :string;
-  mobile :string;
+  city :string;
+  country :string;
+  selectedCategory:string;
 }

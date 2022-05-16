@@ -6,7 +6,6 @@ import {IRequest} from "../models/IRequest";
   providedIn: 'root'
 })
 export class DataService {
-
   constructor(private afs :AngularFirestore) {}
   //add Request
   addRequest(request:IRequest){
@@ -21,9 +20,11 @@ export class DataService {
     return this.afs.doc('/Requests/' + request.id).delete()
   }
 
-  //update Request
-  updateRequest(request :IRequest){
-     this.deleteRequest(request)
-     this.addRequest(request)
+  getRequestById(requestId :string) {
+    return this.afs.doc('/Requests/' + requestId).get();
   }
+  updateRequestById(requestId :string, updatedRequest:IRequest){
+    this.afs.collection('/Requests').doc(requestId).update(updatedRequest)
+  }
+
 }

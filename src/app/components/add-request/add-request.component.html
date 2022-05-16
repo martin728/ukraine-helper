@@ -1,46 +1,45 @@
 <div class="container mt-3">
-  <div class="row">
-    <div class="col">
-      <p class="h3 fw-bold">Add request</p>
-      <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Accusantium, adipisci aliquid assumenda commodi consequuntur error excepturi, in, laboriosam
-        libero molestiae natus nisi porro quam quis quod repellat tempore! Error, natus.</p>
+    <div class="row">
+        <div class="col">
+            <p class="h3 fw-bold">Add request</p>
+            <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, adipisci aliquid assumenda commodi consequuntur error excepturi, in, laboriosam libero molestiae natus nisi porro quam quis quod repellat tempore! Error, natus.</p>
+        </div>
     </div>
-  </div>
 </div>
 <!--form-->
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <form>
-        <div class="mb-2">
-          <input class="form-control" placeholder="Title" type="text" id="title"  name="title" [(ngModel)]="title">
+    <div class="row">
+        <div class="col-sm-4">
+            <form [formGroup]="addRequestForm" (ngSubmit)="addRequest()">
+                <div class="mb-2">
+                    <input class="form-control" placeholder="Full Name" type="text" id="fullName" formControlName="fullName" >
+                </div>
+                <div class="mb-2">
+                    <input class="form-control" placeholder="Title" type="text" id="title" formControlName="title" >
+                </div>
+                <div class="mb-2">
+                    <input class="form-control" placeholder="Request" type="text" id="request" formControlName="request" >
+                </div>
+                <div class="mb-2">
+                    <input class="form-control" placeholder="Email" type="email" id="email" formControlName="email" >
+                </div>
+                <div class="mb-2">
+                    <input class="form-control" placeholder="City" type="text" id="city" formControlName="city">
+                </div>
+                <div class="mb-2">
+                    <input class="form-control" placeholder="Country" type="text" id="country" formControlName="country">
+                </div>
+              <div class="mb-2">
+                <input class="form-control" placeholder="Select category" type="text" id="selectedCategory" formControlName="selectedCategory">
+              </div>
+                <div class="mb-2">
+                    <input class="btn btn-danger" value="Create" type="submit" (click)="addRequest()">
+                    <a routerLink="/" class="btn btn-dark ms-2">Close</a>
+                </div>
+            </form>
         </div>
-        <div class="mb-2">
-          <input class="form-control" placeholder="Name" type="text" id="name" name="name" [(ngModel)]="name">
+        <div class="col-sm-4">
+            <img src="https://icon-library.com/images/icon-avatar/icon-avatar-6.jpg" class="request-img" alt="img">
         </div>
-        <div class="mb-2">
-          <input class="form-control" placeholder="Photo Url" type="text">
-        </div>
-        <div class="mb-2">
-          <input class="form-control" placeholder="Email" type="email" id="email" name="email" [(ngModel)]="email">
-        </div>
-          <div class="mb-2">
-          <input class="form-control" placeholder="Phone" type="number" id="mobile" name="mobile" [(ngModel)]="mobile">
-        </div>
-        <div class="mb-2">
-          <select class="form-control">
-            <option> Select a group</option>
-          </select>
-        </div>
-        <div class="mb-2">
-          <input class="btn btn-danger" value="Create" type="submit" (click)="addRequest()">
-          <a routerLink="/" class="btn btn-dark ms-2">Close</a>
-        </div>
-      </form>
     </div>
-    <div class="col-sm-4">
-    <img src="https://icon-library.com/images/icon-avatar/icon-avatar-6.jpg" class="request-img" alt="img">
-      </div>
-  </div>
 </div>

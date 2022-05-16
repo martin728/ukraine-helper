@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../shared/auth.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-register',
@@ -13,12 +13,13 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   register(){
-    if(this.email === ''){
+    if(!this.email){
       alert('Please enter email')
       return;
     }
-    if(this.password === ''){
+    if(!this.password){
       alert('Please enter password')
       return;
     }

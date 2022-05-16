@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth"
-import {GoogleAuthProvider,GithubAuthProvider,FacebookAuthProvider} from "@angular/fire/auth"
+import {GoogleAuthProvider} from "@angular/fire/auth"
 import {Router} from "@angular/router";
-import {sendPasswordResetEmail} from "@angular/fire/auth";
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   constructor(private fireauth :AngularFireAuth, private router: Router) {}
@@ -17,7 +18,7 @@ export class AuthService {
       if(res.user?.emailVerified == true){
         this.router.navigate(['requests/admin']);
       }else{
-        this.router.navigate(['vrify-email']);
+        this.router.navigate(['verify-email']);
       }
     },err =>{
       alert(err.message);
@@ -47,16 +48,16 @@ export class AuthService {
 
   forgotPassword(email:string){
     this.fireauth.sendPasswordResetEmail(email).then(()=>{
-      this.router.navigate(['/varify-email']);
-    },err => {
+      this.router.navigate(['/verify-email']);
+    },() => {
       alert('smth went wrong')
     })
   }
   //email for varification
   sendEmailForVarification(user:any){
-    user.sendEmailVarification().then((res:any) => {
-      this.router.navigate(['/varify-email']);
-    },(err:any)=>{
+    user.sendEmailVarification().then(() => {
+      this.router.navigate(['/verify-email']);
+    },()=>{
       alert("smth went wrong")
     })
   }
