@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {DataService} from "../../services/data.service";
 import {FormControl, FormGroup} from "@angular/forms";
@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
   templateUrl: './add-request.component.html',
   styleUrls: ['./add-request.component.css']
 })
-export class AddRequestComponent {
+export class AddRequestComponent{
   addRequestForm = new FormGroup({
     request: new FormControl(),
     title: new FormControl(),
@@ -19,7 +19,7 @@ export class AddRequestComponent {
     email: new FormControl(),
     selectedCategory: new FormControl(),
   });
-
+  formControls = Object.keys(this.addRequestForm.controls);
 
   addRequest(){
     this.data.addRequest(this.addRequestForm.value);

@@ -22,6 +22,7 @@ export class EditRequestComponent implements OnInit {
     email: new FormControl(),
     selectedCategory: new FormControl(),
   });
+  formControls = Object.keys(this.editRequestForm.controls);
 
 
   ngOnInit(): void {
