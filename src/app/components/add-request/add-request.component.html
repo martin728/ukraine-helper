@@ -2,22 +2,22 @@
     <div class="row">
         <div class="col">
             <p class="h3 fw-bold">Add request</p>
-            <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, adipisci aliquid assumenda commodi consequuntur error excepturi, in, laboriosam libero molestiae natus nisi porro quam quis quod repellat tempore! Error, natus.</p>
+            <p class="fst-italic">Please fill the form to add your request</p>
         </div>
     </div>
 </div>
-<!--form-->
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <form [formGroup]="addRequestForm" (ngSubmit)="addRequest()" >
-              <div *ngFor="let request of formControls; let i=index">
+              <div *ngFor="let control of formControls; let i=index">
                 <div class="mb-2">
-                  <input class="form-control" placeholder="{{request | titlecase}}" type="text" id="{{request}}" formControlName="{{request}}" >
+                  <input [disabled]="!addRequestForm.valid" class="form-control" placeholder="{{control! | titlecase}}" type="text" id="{{control!}}"  formControlName="{{control!}}" >
+                  <small *ngIf="addRequestForm.get(control)?.invalid" class="text-danger">Invalid form value</small>
                 </div>
               </div>
                 <div class="mb-2">
-                    <input class="btn btn-danger" value="Create" type="submit" (click)="addRequest()">
+                    <input [disabled]="!addRequestForm.valid"  class="btn btn-danger" value="Create" type="submit" (click)="addRequest()">
                     <a routerLink="/" class="btn btn-dark ms-2">Close</a>
                 </div>
             </form>

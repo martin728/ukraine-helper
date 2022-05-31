@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {DataService} from "../../services/data.service";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-add-request',
@@ -11,13 +12,13 @@ import {Router} from "@angular/router";
 })
 export class AddRequestComponent{
   addRequestForm = new FormGroup({
-    request: new FormControl(),
-    title: new FormControl(),
-    fullName: new FormControl(),
-    city: new FormControl(),
-    country: new FormControl(),
-    email: new FormControl(),
-    selectedCategory: new FormControl(),
+    request: new FormControl('',[Validators.required,Validators.minLength(6)]),
+    title: new FormControl('',[Validators.required,Validators.minLength(6)]),
+    fullName: new FormControl('',Validators.required),
+    city: new FormControl('',Validators.required),
+    country: new FormControl('',Validators.required),
+    email: new FormControl('',[Validators.required,Validators.email]),
+    selectedCategory: new FormControl('',Validators.required),
   });
   formControls = Object.keys(this.addRequestForm.controls);
 
