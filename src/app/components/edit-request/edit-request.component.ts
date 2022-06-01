@@ -31,9 +31,12 @@ export class EditRequestComponent implements OnInit {
 
   ngOnInit(): void {
     this.requestId = this.route.snapshot.paramMap.get('requestId');
-    this.dataService.getRequestById(this.requestId!).subscribe((res) => {
-      this.selectedRequest = res.data();
-    });
+    this.dataService
+      .getRequestById(this.requestId!)
+      .subscribe((res) => {
+        this.selectedRequest = res.data();
+      })
+      .unsubscribe();
   }
   updateForm() {
     this.dataService.updateRequestById(this.requestId!, this.editRequest());

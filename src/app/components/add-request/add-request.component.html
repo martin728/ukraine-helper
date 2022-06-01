@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-sm-4">
             <form [formGroup]="addRequestForm" (ngSubmit)="addRequest()" >
-              <div *ngFor="let control of formControls; let i=index">
+              <div *ngFor="let control of formControls;">
                 <div class="mb-2">
-                  <input [disabled]="!addRequestForm.valid" class="form-control" placeholder="{{control! | titlecase}}" type="text" id="{{control!}}"  formControlName="{{control!}}" >
+                  <input [disabled]="!addRequestForm.valid" class="form-control" placeholder="{{control | titlecase}}" type="text" id="{{control}}"  formControlName="{{control}}" >
                   <small *ngIf="addRequestForm.get(control)?.invalid" class="text-danger">Invalid form value</small>
                 </div>
               </div>

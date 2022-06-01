@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-sm-4">
       <form [formGroup]="editRequestForm" (ngSubmit)="editRequest()">
-        <div *ngFor="let request of formControls; let i=index">
+        <div *ngFor="let request of formControls;">
           <div class="mb-2">
             <input class="form-control" placeholder="{{request | titlecase}}" type="text" id="{{request}}" formControlName="{{request}}" >
             <small *ngIf="editRequestForm.get(request)?.invalid" class="text-danger">Invalid form value</small>
