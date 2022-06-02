@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
 <div class="container">
   <a routerLink="/" class="navbar-brand">Help UA 🇺🇦</a>
-  <button (click)="register()" class="btn btn-warning">Logout</button>
+  <button *ngIf="(afAuth.user | async)" (click)="register()" class="btn btn-warning">Logout</button>
 </div>
 </nav>
