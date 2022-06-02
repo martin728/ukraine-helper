@@ -12,11 +12,11 @@ export class LoginComponent {
   constructor(private auth: AuthService) {}
 
   login() {
-    if (this.email === '') {
+    if (!this.email) {
       alert('Please enter email');
       return;
     }
-    if (this.password === '') {
+    if (!this.password) {
       alert('Please enter password');
       return;
     }
