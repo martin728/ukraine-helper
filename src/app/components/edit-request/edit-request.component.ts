@@ -19,7 +19,7 @@ export class EditRequestComponent implements OnInit {
       Validators.required,
       Validators.minLength(6),
     ]),
-    title: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    title: new FormControl('', [Validators.required, Validators.minLength(3)]),
     fullName: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
     country: new FormControl('', Validators.required),

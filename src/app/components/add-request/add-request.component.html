@@ -1,8 +1,8 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col">
-            <p class="h3 fw-bold">Add request</p>
-            <p class="fst-italic">Please fill the form to add your request</p>
+            <p class="h3 fw-bold">Додати запит</p>
+            <p class="fst-italic">Будь ласка, заповніть форму, щоб створити запит.</p>
         </div>
     </div>
 </div>
@@ -13,12 +13,12 @@
               <div *ngFor="let control of formControls;">
                 <div class="mb-2">
                   <input [disabled]="!addRequestForm.valid" class="form-control" placeholder="{{control | titlecase}}" type="text" id="{{control}}"  formControlName="{{control}}" >
-                  <small *ngIf="addRequestForm.get(control)?.invalid" class="text-danger">Invalid form value</small>
+                  <small *ngIf="addRequestForm.get(control)?.invalid" class="text-danger">Недійсне значення форми.</small>
                 </div>
               </div>
                 <div class="mb-2">
                     <input [disabled]="!addRequestForm.valid"  class="btn btn-danger" value="Create" type="submit" (click)="addRequest()">
-                    <a routerLink="/" class="btn btn-dark ms-2">Close</a>
+                    <a routerLink="/" class="btn btn-dark ms-2">Закрити</a>
                 </div>
             </form>
         </div>

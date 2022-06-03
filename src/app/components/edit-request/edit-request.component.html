@@ -1,8 +1,8 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col">
-      <p class="h3 fw-bold">Edit request</p>
-      <p class="fst-italic">Please fill the form to update your request</p>
+      <p class="h3 fw-bold">Редагувати запит</p>
+      <p class="fst-italic">Будь ласка, заповніть форму, щоб відредагувати запит.</p>
     </div>
   </div>
 </div>
@@ -14,12 +14,12 @@
         <div *ngFor="let request of formControls;">
           <div class="mb-2">
             <input class="form-control" placeholder="{{request | titlecase}}" type="text" id="{{request}}" formControlName="{{request}}" >
-            <small *ngIf="editRequestForm.get(request)?.invalid" class="text-danger">Invalid form value</small>
+            <small *ngIf="editRequestForm.get(request)?.invalid" class="text-danger">Недійсне значення форми.</small>
           </div>
         </div>
         <div class="mb-2">
-          <input [disabled]="!editRequestForm.valid" class="btn btn-danger" value="Update" type="submit" (click)="updateForm()">
-          <a routerLink="/" class="btn btn-dark ms-2">Close</a>
+          <input [disabled]="!editRequestForm.valid" class="btn btn-danger" value="Відредагувати" type="submit" (click)="updateForm()">
+          <a routerLink="/" class="btn btn-dark ms-2">Закрити</a>
         </div>
       </form>
     </div>
