@@ -1,33 +1,31 @@
 <div class="container mt-3">
   <div class="row">
-    <div class="col">
-      <p class="h3 fw-bold">View request</p>
-      <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Accusantium, adipisci aliquid assumenda commodi consequuntur error excepturi, in, laboriosam
-        libero molestiae natus nisi porro quam quis quod repellat tempore! Error, natus.</p>
+    <div class="col d-flex">
+      <p class="h3 fw-bold d-flex align-items-center">View request</p>
+      <a href="/" class="btn btn-dark m-3"><i class="fa fa-arrow-alt-circle-left"></i> Back</a>
     </div>
+      <p class="fst-italic">Here you can see full request information and do some stuff I`ll add later</p>
   </div>
 </div>
 <!--request details-->
-
 <div class="container">
-  <div class="row">
-      <div class="col-sm-4">
+  <div class="row row mt-5">
+      <div class="col-sm-4 d-flex flex-column align-items-center">
         <img src="https://tehosmotr-avto.su/wp-content/uploads/2021/05/av2.png" class="request-img-big" alt="img">
+        <h3 class="username">{{this.selectedRequest?.fullName}}</h3>
       </div>
     <div class="col-sm-7">
       <ul>
-        <li class="list-group-item m-1">Name: <span class="fw-bold">Name</span></li>
-        <li class="list-group-item m-1">Email: <span class="fw-bold">diana@mail.com</span></li>
-        <li class="list-group-item m-1">Phone: <span class="fw-bold">+380936158722</span></li>
-        <li class="list-group-item m-1">Company: <span class="fw-bold">Company</span></li>
-        <li class="list-group-item m-1">Title: <span class="fw-bold">Title</span></li>
-        <li class="list-group-item m-1">Group Name: <span class="fw-bold">Group Name</span></li>
+        <li  class="list-group-item m-1">Title: <span class="fw-bold">{{this.selectedRequest?.title}}</span></li>
+        <li class="list-group-item m-1">Request: <span class="fw-bold fst-italic">"{{this.selectedRequest?.request}}"</span></li>
+        <li class="list-group-item m-1">City: <span class="fw-bold">{{this.selectedRequest?.city}}</span></li>
+        <li class="list-group-item m-1">Country: <span class="fw-bold">{{this.selectedRequest?.country}}</span></li>
+        <li class="list-group-item m-1">Email: <span class="fw-bold">{{this.selectedRequest?.email}}</span></li>
+        <li class="list-group-item m-1">Category: <span class="fw-bold">{{this.selectedRequest?.selectedCategory}}</span></li>
       </ul>
     </div>
     <div class="row">
       <div class="col">
-        <a href="/" class="btn btn-dark mt-3"><i class="fa fa-arrow-alt-circle-left"></i> Back</a>
       </div>
     </div>
   </div>

@@ -6,7 +6,7 @@
           <div class="card-body bg-dark">
             <form>
               <div class="mb-3">
-                <h4 class="text-light">Login</h4>
+                <h4 class="text-light">Вхід</h4>
               </div>
               <div class="mb-3">
                 <label class="form-label">Email </label>
@@ -16,21 +16,21 @@
                 <label class="form-label">Password</label>
                 <input type="password" class="form-control" placeholder="Password..." name="password" [(ngModel)]="password">
               </div>
-              <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+              <button type="button" class="btn btn-primary" (click)="login()">Ввійти</button>
               <div class="row">
                 <div class="col-md-6 mt-2">
-                  <a routerLink="/register" class="text-light" href="" style="text-decoration: none" >Need Account? <span class="fw-bold">Register</span></a>
+                  <a routerLink="/register" class="text-light" href="" style="text-decoration: none" >Потрібен акаунт? <span class="fw-bold">Зареєструйся!</span></a>
                 </div>
                 <div class="col-md-6 mt-2">
-                  <a routerLink="/forgot-password" class="text-light" style="text-decoration: none" >Forgot password?</a>
+                  <a routerLink="/forgot-password" class="text-light" style="text-decoration: none" >Забули пароль?</a>
                 </div>
               </div>
               <div class="row mt-2">
-                <a href="" (click)="signInWithGoogle()" style="text-decoration: none">
+                <a (click)="signInWithGoogle()" style="text-decoration: none">
                   <div class="card border-0">
-                    <div class="card-body card-shadow text-center bg-dark ">
+                    <div class="card-body card-shadow text-center bg-dark text-light">
                       <img src="https://www.fintechfutures.com/files/2016/03/google.png" alt="" height="24px" width="24px">
-                        Sign in with google
+                        Ввійти за допомогою Google!
                     </div>
                   </div>
                 </a>

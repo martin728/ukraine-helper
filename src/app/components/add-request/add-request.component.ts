@@ -1,50 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../shared/auth.service";
-import {DataService} from "../../shared/data.service";
-import {IRequest} from "../../models/IRequest";
+import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { DataService } from '../../services/data.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-request',
   templateUrl: './add-request.component.html',
-  styleUrls: ['./add-request.component.css']
+  styleUrls: ['./add-request.component.css'],
 })
-export class AddRequestComponent implements OnInit {
-  requestsList: IRequest[] = [];
-  requestsObj : IRequest ={
-    email: "",
-    mobile: "",
-    name: "",
-    title: ""
-  };
-  id:string= '';
-  name:string= '';
-  email:string= '';
-  mobile:string= '';
-  title:string= '';
+export class AddRequestComponent {
+  addRequestForm = new FormGroup({
+    request: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+    title: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    fullName: new FormControl('', Validators.required),
+    city: new FormControl('', Validators.required),
+    country: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    selectedCategory: new FormControl('', Validators.required),
+  });
+  formControls = Object.keys(this.addRequestForm.controls);
 
-  constructor(private auth :AuthService, private data : DataService) { }
+  addRequest() {
+    this.data.addRequest(this.addRequestForm.value);
+    this.addRequestForm.reset();
+    this.router.navigate(['/']);
+  }
 
-  ngOnInit(): void {
-  }
-  resetForm(){
-    this.id = '';
-    this.name = '';
-    this.email = '';
-    this.mobile = '';
-    this.title = '';
-  }
-  addRequest(){
-    // if(this.name=='' || this.email=='' || this.mobile=='' || this.title==''){
-    //   alert('Fill all the fields');
-    //   return;
-    // }
-    this.requestsObj.id = '';
-    this.requestsObj.email = this.email;
-    this.requestsObj.name = this.name;
-    this.requestsObj.mobile = this.mobile;
-    this.requestsObj.title = this.title;
-
-    this.data.addRequest(this.requestsObj);
-    this.resetForm()
-  }
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    private data: DataService
+  ) {}
 }

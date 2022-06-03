@@ -7,7 +7,7 @@ import {ViewRequestComponent} from "./components/view-request/view-request.compo
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
-import {VarifyEmailComponent} from "./components/varify-email/varify-email.component";
+import {VerifyEmailComponent} from "./components/verify-email/verify-email.component";
 import {ForgotPasswordComponent} from "./components/forgot-password/forgot-password.component";
 import {RequestComponent} from "./components/request/request.component";
 
@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'requests/add', component:AddRequestComponent},
   {path:'requests/edit/:requestId', component:EditRequestComponent},
   {path:'login', component:LoginComponent},
-  {path:'varify-email', component:VarifyEmailComponent},
+  {path:'verify-email', component:VerifyEmailComponent},
   {path:'forgot-password', component:ForgotPasswordComponent},
   {path:'register', component:RegisterComponent},
   {path:'request', component:RequestComponent},

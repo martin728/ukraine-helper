@@ -113,9 +113,21 @@
             "firebaseProject": "help-ua-project",
             "firebaseHostingSite": "help-ua-project"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "helper"
+  "defaultProject": "helper",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

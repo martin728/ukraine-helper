@@ -1,10 +1,8 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col">
-      <p class="h3 fw-bold">Edit request</p>
-      <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Accusantium, adipisci aliquid assumenda commodi consequuntur error excepturi, in, laboriosam
-        libero molestiae natus nisi porro quam quis quod repellat tempore! Error, natus.</p>
+      <p class="h3 fw-bold">Редагувати запит</p>
+      <p class="fst-italic">Будь ласка, заповніть форму, щоб відредагувати запит.</p>
     </div>
   </div>
 </div>
@@ -12,33 +10,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <form>
-        <div class="mb-2">
-          <input class="form-control" placeholder="Name" type="text">
+      <form [formGroup]="editRequestForm" (ngSubmit)="editRequest()">
+        <div *ngFor="let request of formControls;">
+          <div class="mb-2">
+            <input class="form-control" placeholder="{{request | titlecase}}" type="text" id="{{request}}" formControlName="{{request}}" >
+            <small *ngIf="editRequestForm.get(request)?.invalid" class="text-danger">Недійсне значення форми.</small>
+          </div>
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Photo Url" type="text">
-        </div>
-        <div class="mb-2">
-          <input class="form-control" placeholder="Email" type="email">
-        </div>
-        <div class="mb-2">
-          <input class="form-control" placeholder="Phone" type="number">
-        </div>
-        <div class="mb-2">
-          <input class="form-control" placeholder="Company" type="text">
-        </div>
-        <div class="mb-2">
-          <input class="form-control" placeholder="Title" type="text">
-        </div>
-        <div class="mb-2">
-          <select class="form-control">
-            <option> Select a group</option>
-          </select>
-        </div>
-        <div class="mb-2">
-          <input class="btn btn-danger" value="Update" type="submit">
-          <a routerLink="/" class="btn btn-dark ms-2">Close</a>
+          <input [disabled]="!editRequestForm.valid" class="btn btn-danger" value="Відредагувати" type="submit" (click)="updateForm()">
+          <a routerLink="/" class="btn btn-dark ms-2">Закрити</a>
         </div>
       </form>
     </div>

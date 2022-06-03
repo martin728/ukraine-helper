@@ -6,28 +6,24 @@
           <div class="row ">
             <div class="col-md-4">
               <img src="https://icon-library.com/images/icon-avatar/icon-avatar-6.jpg" class="request-img" alt="avatar">
+              <p class="username">{{request.fullName}}</p>
             </div>
             <div class="col-md-7">
-              <h2 id="title" > Need help</h2>
-              <p>"I am looking for a place to stay."</p>
+              <h2 id="title" >{{request.title}}</h2>
+              <p style="font-style: italic">"{{request.request}}."</p>
               <div>
-                <i class="fa-solid fa-location-dot"></i> Lviv,Ukraine.
-                <i class="fa-solid fa-house-circle-exclamation"></i> Shelter
+                <i class="fa-solid fa-location-dot"></i> {{request.city}},{{request.country}}.
+                <i class="fa-solid fa-house-circle-exclamation"></i> {{request.selectedCategory}}
               </div>
-              <!--<ul>-->
-              <!--<li class="list-group-item m-1">Name: <span class="fw-bold">Name</span></li>-->
-              <!--<li class="list-group-item m-1">Email: <span class="fw-bold" >diana@mail.com</span></li>-->
-              <!--<li class="list-group-item m-1">Phone: <span class="fw-bold" >+380936158722</span></li>-->
-              <!--</ul>-->
             </div>
             <div class="col-md-1 d-flex flex-column justify-content-center align-items-center">
-              <a routerLink="/requests/view/:requestId" class="btn btn-warning my-1">
+              <a routerLink="/requests/view/{{request.id}}" class="btn btn-warning my-1">
                 <i class="fa fa-eye"></i>
               </a>
-              <a routerLink="/requests/edit/:requestId" class="btn btn-primary my-1">
+              <a routerLink="/requests/edit/{{request.id}}" class="btn btn-primary my-1">
                 <i class="fa fa-pen"></i>
               </a>
-              <button class="btn btn-danger my-1">
+              <button class="btn btn-danger my-1" (click)="deleteRequest()">
                 <i class="fa fa-trash-alt"></i>
               </button>
             </div>
